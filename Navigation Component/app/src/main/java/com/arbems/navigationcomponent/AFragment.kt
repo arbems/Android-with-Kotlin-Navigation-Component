@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import kotlinx.android.synthetic.main.fragment_a.*
 
 class AFragment : Fragment() {
 
@@ -17,8 +18,17 @@ class AFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_a, container, false)
     }
 
-    fun onClick(view: View) {
-        val action = AFragmentDirections.actionAFragmentToBFragment()
-        view.findNavController().navigate(action)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        button.setOnClickListener {
+            val action = AFragmentDirections.actionAFragmentToBFragment()
+            view.findNavController().navigate(action)
+        }
+
+        button2.setOnClickListener {
+            val action = AFragmentDirections.actionAFragmentToCFragment()
+            view.findNavController().navigate(action)
+        }
     }
 }

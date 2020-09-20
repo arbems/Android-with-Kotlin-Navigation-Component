@@ -13,17 +13,25 @@
             android:id="@+id/action_AFragment_to_BFragment"
             app:destination="@id/BFragment" />
         <action
-            android:id="@+id/action_AFragment_to_CFragment2"
+            android:id="@+id/action_AFragment_to_CFragment"
             app:destination="@id/CFragment" />
     </fragment>
     <fragment
         android:id="@+id/BFragment"
         android:name="com.arbems.navigationcomponent.BFragment"
         android:label="fragment_b"
-        tools:layout="@layout/fragment_b" />
+        tools:layout="@layout/fragment_b" >
+        <action
+            android:id="@+id/action_BFragment_to_AFragment"
+            app:destination="@id/AFragment" />
+    </fragment>
     <fragment
         android:id="@+id/CFragment"
         android:name="com.arbems.navigationcomponent.CFragment"
         android:label="fragment_c"
-        tools:layout="@layout/fragment_c" />
+        tools:layout="@layout/fragment_c" >
+        <action
+            android:id="@+id/action_CFragment_to_AFragment"
+            app:destination="@id/AFragment" />
+    </fragment>
 </navigation>

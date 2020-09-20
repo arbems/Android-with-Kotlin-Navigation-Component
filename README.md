@@ -2,29 +2,11 @@
 
 *Proyecto con ejemplos de código de [Navigation](https://developer.android.com/guide/navigation) en Android con Kotlin.*
 
-La navegación se refiere a las interacciones que permiten a los usuarios navegar a través, dentro y fuera de las diferentes piezas de contenido de tu app. El componente Navigation de Android Jetpack te permite implementar la navegación, desde simples clics de botones hasta patrones más complejos, como las barras de apps y los paneles laterales de navegación.
-
-#### []()
-
-#### []()
-
-#### []()
-
-#### []()
-
-#### []()
-
-#### []()
-
-#### []()
-
-#### []()
-
-#### []()
-
-#### []()
-
-#### []()
+* Uso de gráfico de navegación
+* Uso de destinos y acciones
+* Navegando a destinos
+* Uso de seguridad de tipo mediante Safe Args
+* Agregando host de navegación a una actividad
 
 ## Attribution
 
