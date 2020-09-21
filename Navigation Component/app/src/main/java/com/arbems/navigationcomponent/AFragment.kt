@@ -21,13 +21,23 @@ class AFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        button.setOnClickListener {
+        button1.setOnClickListener {
             val action = AFragmentDirections.actionAFragmentToBFragment()
             view.findNavController().navigate(action)
         }
 
         button2.setOnClickListener {
             val action = AFragmentDirections.actionAFragmentToCFragment()
+            view.findNavController().navigate(action)
+        }
+
+        btnNestedGraph.setOnClickListener {
+            val action = AFragmentDirections.actionAFragmentToDFragment()
+            view.findNavController().navigate(action)
+        }
+
+        btnIncludeGraph.setOnClickListener {
+            val action = AFragmentDirections.actionAFragmentToIncludedGraph()
             view.findNavController().navigate(action)
         }
     }

@@ -4,23 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/AFragment">
+
+    <include app:graph="@navigation/included_graph" />
+
     <fragment
         android:id="@+id/AFragment"
         android:name="com.arbems.navigationcomponent.AFragment"
         android:label="fragment_a"
-        tools:layout="@layout/fragment_a" >
+        tools:layout="@layout/fragment_a">
         <action
             android:id="@+id/action_AFragment_to_BFragment"
             app:destination="@id/BFragment" />
         <action
             android:id="@+id/action_AFragment_to_CFragment"
             app:destination="@id/CFragment" />
+        <action
+            android:id="@+id/action_AFragment_to_DFragment"
+            app:destination="@id/navigation" />
+        <action
+            android:id="@+id/action_AFragment_to_included_graph"
+            app:destination="@id/included_graph" />
     </fragment>
     <fragment
         android:id="@+id/BFragment"
         android:name="com.arbems.navigationcomponent.BFragment"
         android:label="fragment_b"
-        tools:layout="@layout/fragment_b" >
+        tools:layout="@layout/fragment_b">
         <action
             android:id="@+id/action_BFragment_to_AFragment"
             app:destination="@id/AFragment" />
@@ -29,9 +38,24 @@
         android:id="@+id/CFragment"
         android:name="com.arbems.navigationcomponent.CFragment"
         android:label="fragment_c"
-        tools:layout="@layout/fragment_c" >
+        tools:layout="@layout/fragment_c">
         <action
             android:id="@+id/action_CFragment_to_AFragment"
             app:destination="@id/AFragment" />
     </fragment>
+
+    <navigation
+        android:id="@+id/navigation"
+        app:startDestination="@id/DFragment">
+        <fragment
+            android:id="@+id/DFragment"
+            android:name="com.arbems.navigationcomponent.DFragment"
+            android:label="fragment_d"
+            tools:layout="@layout/fragment_d" />
+    </navigation>
+
+    <action
+        android:id="@+id/action_global_AFragment"
+        app:destination="@id/AFragment" />
+
 </navigation>
