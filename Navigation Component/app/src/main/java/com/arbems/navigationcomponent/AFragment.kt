@@ -1,11 +1,14 @@
 package com.arbems.navigationcomponent
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_a.*
 
 class AFragment : Fragment() {
@@ -27,8 +30,10 @@ class AFragment : Fragment() {
         }
 
         button2.setOnClickListener {
-            val action = AFragmentDirections.actionAFragmentToCFragment()
-            view.findNavController().navigate(action)
+            // navigate with ID
+            view.findNavController().navigate(R.id.CFragment)
+            // using createNavigateOnClickListener()
+            // Navigation.createNavigateOnClickListener(R.id.CFragment, null)
         }
 
         btnNestedGraph.setOnClickListener {
@@ -39,6 +44,12 @@ class AFragment : Fragment() {
         btnIncludeGraph.setOnClickListener {
             val action = AFragmentDirections.actionAFragmentToIncludedGraph()
             view.findNavController().navigate(action)
+        }
+
+        buttonURI.setOnClickListener {
+            val navController = findNavController()
+            val deepLink = Uri.parse("android-app://androidx.navigation.app/profile")
+            findNavController().navigate(deepLink)
         }
     }
 }

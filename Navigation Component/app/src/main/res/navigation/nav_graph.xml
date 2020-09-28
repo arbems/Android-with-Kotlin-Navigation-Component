@@ -58,4 +58,8 @@
         android:id="@+id/action_global_AFragment"
         app:destination="@id/AFragment" />
 
+    <deepLink
+        android:id="@+id/profile"
+        app:uri="https://mintcoffee.es" />
+
 </navigation>
