@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PopUpTo - PopUpToInclusive</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="a_fragment">Hello A fragment</string>
+    <string name="b_fragment">Hello B fragment</string>
+    <string name="c_fragment">Hello C fragment</string>
+</resources>

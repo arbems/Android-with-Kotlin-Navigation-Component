@@ -33,6 +33,10 @@
         <action
             android:id="@+id/action_BFragment_to_AFragment"
             app:destination="@id/AFragment" />
+        <argument
+            android:name="myArg"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/CFragment"
