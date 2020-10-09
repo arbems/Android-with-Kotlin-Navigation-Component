@@ -1,0 +1,6 @@
+include ':ViewPager2_NestedNavhost'
+include ':ViewPager2'
+include ':ActionItems'
+include ':NavigationView'
+include ':BottomNavigation'
+rootProject.name = "NavigationUI"

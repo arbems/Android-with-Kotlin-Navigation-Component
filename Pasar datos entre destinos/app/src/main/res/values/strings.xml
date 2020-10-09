@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Pass Data Between Destinations</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_fragment_A">Hello fragment A</string>
+    <string name="hello_fragment_B">Hello fragment B</string>
+    <string name="hello_fragment_C">Hello fragment C</string>
+    <string name="back">Back</string>
+</resources>

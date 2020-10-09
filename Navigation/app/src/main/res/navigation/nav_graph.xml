@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.devmonkey.navigation.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_galleryFragment"
+            app:destination="@id/galleryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_slideshowFragment"
+            app:destination="@id/slideshowFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_toolsFragment"
+            app:destination="@id/toolsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.devmonkey.navigation.GalleryFragment"
+        android:label="Gallery"
+        tools:layout="@layout/fragment_gallery" />
+    <fragment
+        android:id="@+id/slideshowFragment"
+        android:name="com.devmonkey.navigation.SlideshowFragment"
+        android:label="Slideshow"
+        tools:layout="@layout/fragment_slideshow">
+        <action
+            android:id="@+id/action_slideshowFragment_to_slideshowDetailFragment"
+            app:destination="@id/slideshowDetailFragment">
+            <argument
+                android:name="slideshowNumber"
+                android:defaultValue="3"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/toolsFragment"
+        android:name="com.devmonkey.navigation.ToolsFragment"
+        android:label="Tools"
+        tools:layout="@layout/fragment_tools" />
+    <action
+        android:id="@+id/action_global_homeFragment"
+        app:destination="@id/homeFragment"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/slideshowDetailFragment"
+        android:name="com.devmonkey.navigation.SlideshowDetailFragment"
+        android:label="Slideshow {slideshowNumber}"
+        tools:layout="@layout/fragment_slideshow_detail">
+        <action
+            android:id="@+id/action_slideshowDetailFragment_to_slideshowFragment"
+            app:destination="@id/slideshowFragment" />
+        <argument
+            android:name="slideshowNumber"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.devmonkey.navigation.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.devmonkey.navigation.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <navigation android:id="@+id/navigation_login"
+        app:startDestination="@id/loginFragment">
+        <fragment
+            android:id="@+id/registerFragment"
+            android:name="com.devmonkey.navigation.login.RegisterFragment"
+            android:label="Register"
+            tools:layout="@layout/fragment_register" />
+        <fragment
+            android:id="@+id/loginFragment"
+            android:name="com.devmonkey.navigation.login.LoginFragment"
+            android:label="Login"
+            tools:layout="@layout/fragment_login">
+            <action
+                android:id="@+id/action_loginFragment_to_registerFragment"
+                app:destination="@id/registerFragment" />
+            <action
+                android:id="@+id/action_loginFragment_to_recoverPassFragment"
+                app:destination="@id/recoverPassFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/recoverPassFragment"
+            android:name="com.devmonkey.navigation.login.RecoverPassFragment"
+            android:label="Recover password"
+            tools:layout="@layout/fragment_recover_pass" />
+    </navigation>
+    <action android:id="@+id/action_global_navigation_login" app:destination="@id/navigation_login" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.devmonkey.navigation.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>

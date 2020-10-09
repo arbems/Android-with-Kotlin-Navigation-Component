@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/AFragment">
+
+    <fragment
+        android:id="@+id/AFragment"
+        android:name="com.arbems.passdatabetweendestinations.AFragment"
+        android:label="fragment_a"
+        tools:layout="@layout/fragment_a">
+        <action
+            android:id="@+id/action_AFragment_to_BFragment"
+            app:destination="@id/BFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right">
+
+            <!-- override a destination argument in an action  -->
+            <argument
+                android:name="myArg"
+                android:defaultValue="1"
+                app:argType="integer" />
+        </action>
+        <argument
+            android:name="price"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/BFragment"
+        android:name="com.arbems.passdatabetweendestinations.BFragment"
+        android:label="fragment_b"
+        tools:layout="@layout/fragment_b">
+
+        <!-- Define destination argument -->
+        <argument
+            android:name="myArg"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/CFragment"
+        android:name="com.arbems.passdatabetweendestinations.CFragment"
+        android:label="fragment_c"
+        tools:layout="@layout/fragment_c">
+        <action
+            android:id="@+id/action_CFragment_to_AFragment"
+            app:destination="@id/AFragment"
+            app:popUpTo="@id/AFragment"
+            app:popUpToInclusive="true"/>
+        <argument
+            android:name="amount"
+            app:argType="string"
+            android:defaultValue="0" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_AFragment"
+        app:destination="@id/AFragment" />
+</navigation>

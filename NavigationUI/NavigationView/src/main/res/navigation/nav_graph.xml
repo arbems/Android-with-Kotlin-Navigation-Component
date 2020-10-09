@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.devmonkey.navigationview.MainFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_playlistFragment"
+            app:destination="@id/playlistFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_albumsFragment"
+            app:destination="@id/albumsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playlistFragment"
+        android:name="com.devmonkey.navigationview.blankFragments.PlaylistFragment"
+        android:label="Playlist"
+        tools:layout="@layout/fragment_playlist" />
+    <fragment
+        android:id="@+id/albumsFragment"
+        android:name="com.devmonkey.navigationview.blankFragments.AlbumsFragment"
+        android:label="Álbumes"
+        tools:layout="@layout/fragment_albums" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.devmonkey.navigationview.blankFragments.SettingsFragment"
+        android:label="Configuración"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.devmonkey.navigationview.blankFragments.UserFragment"
+        android:label="Cuenta usuario"
+        tools:layout="@layout/fragment_user" />
+    <action android:id="@+id/action_global_mainFragment" app:destination="@id/mainFragment" /><action android:id="@+id/action_global_userFragment" app:destination="@id/userFragment"/>
+</navigation>

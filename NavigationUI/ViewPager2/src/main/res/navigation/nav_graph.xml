@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/viewPagerContainerFragment">
+
+    <fragment
+        android:id="@+id/viewPagerContainerFragment"
+        android:name="com.devmonkey.viewpager2.viewpagerFragment.ViewPagerContainerFragment"
+        android:label="Music app"
+        tools:layout="@layout/fragment_view_pager_container" >
+        <action
+            android:id="@+id/action_viewPagerContainerFragment_to_playlist2Fragment"
+            app:destination="@id/playlist2Fragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_viewPagerContainerFragment"
+        app:destination="@id/viewPagerContainerFragment"
+        app:popUpTo="@id/viewPagerContainerFragment"
+        app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/playlist2Fragment"
+        android:name="com.devmonkey.viewpager2.blankFragments.Playlist2Fragment"
+        android:label="Playlist 2">
+        <action
+            android:id="@+id/action_playlist2Fragment_to_playlist3Fragment"
+            app:destination="@id/playlist3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playlist3Fragment"
+        android:name="com.devmonkey.viewpager2.blankFragments.Playlist3Fragment"
+        android:label="Playlist 3" />
+</navigation>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/favorites_dest"
+        android:icon="@drawable/ic_favorite"
+        android:title="Favorites"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/music_dest"
+        android:icon="@drawable/ic_music"
+        android:title="Music"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/places_dest"
+        android:icon="@drawable/ic_place"
+        android:title="Places"
+        app:showAsAction="ifRoom" />
+</menu>
